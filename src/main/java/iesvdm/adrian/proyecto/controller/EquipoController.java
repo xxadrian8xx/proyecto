@@ -1,6 +1,7 @@
 package iesvdm.adrian.proyecto.controller;
 
 import iesvdm.adrian.proyecto.domain.Equipo;
+import iesvdm.adrian.proyecto.exceptions.ResourceNotFoundException;
 import iesvdm.adrian.proyecto.service.EquipoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -30,7 +31,7 @@ public class EquipoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Equipo> one(@PathVariable("id") Long id) {
+    public Optional<Equipo> one(@PathVariable("id") Long id) throws ResourceNotFoundException {
         return this.equipoService.one(id);
     }
 

@@ -29,14 +29,12 @@ public class Equipo {
 
     private String descripcion;
 
-    @JoinTable(
-            name = "partido_equipos",
-            joinColumns = @JoinColumn(name = "FK_EQUIPO", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "FK_PARTIDO", nullable = false)
-    )
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Partido> historial;
+    @OneToMany(mappedBy = "id")
+    List<Partido> historial;
 
     @OneToMany(mappedBy = "equipo")
     private List<Usuario> jugadores;
+
+    @ManyToMany(mappedBy = "equipos")
+    private List<Torneo> torneosInscrito;
 }

@@ -22,7 +22,15 @@ public class Partido {
 
     private Date fecha;
 
-    @ManyToMany(mappedBy = "historial")
-    private List<Equipo> equipos;
+    private int[] resultado = new int[2];
+
+    @ManyToOne
+    private Equipo Local;
+
+    @ManyToOne
+    private Equipo Visitante;
+
+    @ManyToOne
+    private Torneo torneo;
 
 }

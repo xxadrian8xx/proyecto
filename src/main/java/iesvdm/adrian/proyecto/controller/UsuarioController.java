@@ -12,6 +12,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/usuarios")
+@CrossOrigin
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
@@ -30,7 +31,7 @@ public class UsuarioController {
         return this.usuarioService.save(usuario);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public Optional<Usuario> one(@PathVariable("id") Long id) {
         return this.usuarioService.one(id);
     }

@@ -30,6 +30,8 @@ public class Usuario {
 
     private String password;
 
+    private String rol;
+
     private String email;
 
     private String telefono;

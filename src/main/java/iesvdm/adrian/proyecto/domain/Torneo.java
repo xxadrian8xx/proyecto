@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,5 +24,18 @@ public class Torneo {
 
     private Deporte deporte;
 
+    private int tamaño;
+
     private String nivel;
+
+    @JoinTable(
+            name = "rel_torneo_equipo",
+            joinColumns = @JoinColumn(name = "ID_Torneo", nullable = false),
+            inverseJoinColumns = @JoinColumn(name="ID_Equipo", nullable = false)
+    )
+    @ManyToMany
+    private List<Equipo> equipos;
+
+    @OneToMany
+    private List<Partido> partidos;
 }
