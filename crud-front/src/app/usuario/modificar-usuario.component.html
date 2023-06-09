@@ -3,16 +3,32 @@
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
             <h4 class="text-center">Update Product</h4>
-            <form>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="usuario name"
-                        autocomplete="off" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="product name"
+                        autocomplete="off" required [(ngModel)]="usuario.nombre">
                 </div>
                 <div class="mb-3">
-                    <input type="numberprice" class="form-control" id="price" name="price" placeholder="product price"
-                        autocomplete="off" required>
+                    <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="product price"
+                        autocomplete="off" required [(ngModel)]="usuario.apellido1">
                 </div>
-                <button class="btn btn-outline-success w-100 mb-3">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="product price"
+                        autocomplete="off" required [(ngModel)]="usuario.apellido2">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="product price"
+                        autocomplete="off" required [(ngModel)]="usuario.usuario">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="product price"
+                        autocomplete="off" required [(ngModel)]="usuario.email">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="product price"
+                        autocomplete="off" required [(ngModel)]="usuario.telefono">
+                </div>
+                <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
                         <i class="far fa-edit"></i> Update
                 </button>
                 <button class="btn btn-outline-primary w-100" routerLink="/">

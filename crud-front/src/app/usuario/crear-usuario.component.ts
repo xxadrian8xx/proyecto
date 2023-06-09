@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../service/usuario.service';
 import { Equipo } from '../model/equipo';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-crear-usuario',

@@ -1,8 +1,10 @@
 package iesvdm.adrian.proyecto.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,8 +21,10 @@ public class Torneo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_torneo")
     private Long id;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate fecha_inicio;
 
-    private Date fecha_inicio;
+    private String nombre;
 
     private Deporte deporte;
 

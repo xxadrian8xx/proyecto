@@ -1,6 +1,6 @@
 <app-menu></app-menu>
 
-<div class="container" *ngIf="">
+<div class="container" *ngIf="usuario">
     <div class="row mt-5">
         <div class="col-md-4 mx-auto">
             <div class="card">
@@ -9,13 +9,13 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>ID: </b></li>
-                        <li class="list-group-item"><b>Name: </b>Prod1</li>
-                        <li class="list-group-item"><b>Price: </b>100 €</li>
+                        <li class="list-group-item"><b>ID: </b>{{usuario.id}}</li>
+                        <li class="list-group-item"><b>Nombre: </b>{{usuario.nombre}}<div></div></li>
+                        <li class="list-group-item"><b>Apellido 1: </b>{{usuario.apellido1}}</li>
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-outline-primary w-100" routerLink="/">
+                    <button class="btn btn-outline-primary w-100" routerLink="/usuarios">
                         <i class="fas fa-arrow-alt-circle-left"></i> Back
                     </button>
                 </div>

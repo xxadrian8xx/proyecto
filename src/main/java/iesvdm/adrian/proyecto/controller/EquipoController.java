@@ -13,6 +13,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/equipos")
+@CrossOrigin
 public class EquipoController {
     private final EquipoService equipoService;
 
@@ -30,7 +31,7 @@ public class EquipoController {
         return this.equipoService.save(equipo);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public Optional<Equipo> one(@PathVariable("id") Long id) throws ResourceNotFoundException {
         return this.equipoService.one(id);
     }

@@ -3,17 +3,33 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-4 mx-auto">
-                <h4 class="text-center">Create Product</h4>
-                <form>
+                <h4 class="text-center">Crear Usuario</h4>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"
-                            autocomplete="off" required>
+                            autocomplete="off" required [(ngModel)]="nombre">
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="price" name="apellido1" placeholder="apellido1"
-                            autocomplete="off" required>
+                            autocomplete="off" required [(ngModel)]="apellido1">
                     </div>
-                    <button class="btn btn-outline-success w-100 mb-3">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="price" name="apellido2" placeholder="apellido2"
+                            autocomplete="off" required [(ngModel)]="apellido2">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="price" name="usuario" placeholder="usuario"
+                            autocomplete="off" required [(ngModel)]="usuario">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="price" name="email" placeholder="email"
+                            autocomplete="off" required [(ngModel)]="email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="price" name="telefono" placeholder="telefono"
+                            autocomplete="off" required [(ngModel)]="telefono">
+                    </div>
+                    <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
                         <i class="fas fa-plus-circle"></i> Create
                     </button>
                     <button class="btn btn-outline-primary w-100" routerLink="/">

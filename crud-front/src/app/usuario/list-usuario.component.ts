@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from '../model/usuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-usuario',
@@ -32,4 +33,8 @@ export class ListUsuarioComponent implements OnInit{
     );
   }
 
+  onDelete(id: number): void {
+        this.usuarioService.delete(id)
+  }
+  
 }

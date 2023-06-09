@@ -60,7 +60,8 @@ import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
     SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

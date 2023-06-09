@@ -25,8 +25,6 @@ public class Equipo {
     @Lob
     private String logo;
 
-    private final String sin_foto = "";
-
     private String descripcion;
 
     @OneToMany(mappedBy = "id")

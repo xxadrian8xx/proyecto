@@ -1,1 +1,42 @@
-<p>crear-torneo works!</p>
+<body>
+    <app-menu></app-menu>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 mx-auto">
+                <h4 class="text-center">Crear Torneo</h4>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"
+                            autocomplete="off" required [(ngModel)]="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" placeholder="apellido1"
+                            autocomplete="off" required [(ngModel)]="fecha_inicio">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="deporte" name="apellido2" placeholder="deporte"
+                            autocomplete="off" required [(ngModel)]="deporte">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nivel" name="email" placeholder="nivel"
+                            autocomplete="off" required [(ngModel)]="nivel">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="partidos" name="telefono" placeholder="partidos"
+                            autocomplete="off" required [(ngModel)]="partidos">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="equipo" name="telefono" placeholder="equipo"
+                            autocomplete="off" required [(ngModel)]="equipo">
+                    </div>
+                    <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
+                        <i class="fas fa-plus-circle"></i> Create
+                    </button>
+                    <button class="btn btn-outline-primary w-100" routerLink="/">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Back
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

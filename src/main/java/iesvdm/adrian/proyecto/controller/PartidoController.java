@@ -14,6 +14,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/partidos")
+@CrossOrigin
 public class PartidoController {
     private final PartidoService partidoService;
 

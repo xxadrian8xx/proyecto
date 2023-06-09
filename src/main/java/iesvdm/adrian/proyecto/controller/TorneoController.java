@@ -12,6 +12,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/torneos")
+@CrossOrigin
 public class TorneoController {
     private final TorneoService torneoService;
 

@@ -1,1 +1,25 @@
-<p>detalle-torneo works!</p>
+<app-menu></app-menu>
+
+<div class="container" *ngIf="torneo">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    Detail
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>ID: </b>{{torneo.id}}</li>
+                        <li class="list-group-item"><b>Nombre: </b>{{torneo.nombre}}<div></div></li>
+                        <li class="list-group-item"><b>Apellido 1: </b>{{torneo.fecha_inicio}}</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary w-100" routerLink="/usuarios">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

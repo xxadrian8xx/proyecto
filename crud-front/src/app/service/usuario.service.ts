@@ -19,7 +19,7 @@ export class UsuarioService {
   }
 
   public detail(id: number): Observable<Usuario>{
-    return this.httpClient.get<Usuario>(this.usuarioURL + `/${id}`);
+    return this.httpClient.get<Usuario>(this.usuarioURL + `/detail/${id}`);
   }
 
   public create(usuario: Usuario): Observable<any> {
@@ -28,6 +28,10 @@ export class UsuarioService {
 
   public update(id: number, usuario: Usuario): Observable<any> {
     return this.httpClient.put<any>(this.usuarioURL + `/${id}`, usuario);
+  }
+
+  public delete(id: number): Observable<any> {
+    return this.httpClient.delete<any>(this.usuarioURL + `/${id}`);
   }
   
 }
