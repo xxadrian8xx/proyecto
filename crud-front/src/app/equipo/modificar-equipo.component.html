@@ -1,1 +1,24 @@
-<p>modificar-equipo works!</p>
+<app-menu></app-menu>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <h4 class="text-center">Update Product</h4>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"
+                            autocomplete="off" required [(ngModel)]="equipo.nombre">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="descripcion" name="apellido2"
+                            placeholder="descripcion" autocomplete="off" required [(ngModel)]="equipo.descripcion">
+                    </div>
+                    <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
+                        <i class="far fa-edit"></i> Update
+                    </button>
+                    <button class="btn btn-outline-primary w-100" routerLink="/equipos">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Back
+                    </button>
+                </form>
+        </div>
+    </div>
+</div>

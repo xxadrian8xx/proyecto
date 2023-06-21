@@ -30,7 +30,7 @@ public class TorneoController {
         return this.torneoService.save(torneo);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public Optional<Torneo> one(@PathVariable("id") Long id) {
         return this.torneoService.one(id);
     }

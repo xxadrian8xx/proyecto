@@ -29,7 +29,7 @@ export class ModificarUsuarioComponent implements OnInit {
     this.usuarioService.update(this.id, this.usuario).subscribe(
       data => {
         this.toast.success(data.message, 'OK', { timeOut: 3000, positionClass: 'toast-top-center' });
-        this.router.navigate(['']);
+        this.router.navigate(['/usuarios']);
       },
       err => {
         this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center' });

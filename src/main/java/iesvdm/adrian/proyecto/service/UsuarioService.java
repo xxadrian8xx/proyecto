@@ -40,4 +40,11 @@ public class UsuarioService {
             return p;});
     }
 
+    public List<Usuario> usuarioLogeado(String usuario, String password){
+        return this.usuarioRepository.findByUsuarioAndPassword(usuario, password);
+    }
+
+    public List<Usuario> usuariosEnEquipos(Long idEquipo){
+        return this.usuarioRepository.findByUsuarioEnEquipo(idEquipo);
+    }
 }

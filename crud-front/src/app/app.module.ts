@@ -30,6 +30,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MenuCortoComponent } from './menu/menu-corto.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
+import { LoginComponent } from './inicio/login/login.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
     MenuCortoComponent,
     InicioComponent,
     CrearUsuarioComponent,
+    LoginComponent,
     
   ],
   imports: [

@@ -34,6 +34,7 @@ export class ListTorneoComponent implements OnInit{
 
   onDelete(id: number): void {
         this.torneoService.delete(id)
+        window.location.reload()
   }
 
 }

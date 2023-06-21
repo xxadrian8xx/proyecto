@@ -1,8 +1,13 @@
 package iesvdm.adrian.proyecto.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.util.Pair;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +18,8 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 @Builder
 @Table(name = "partido")
-public class Partido {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Partido implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,14 +28,15 @@ public class Partido {
 
     private Date fecha;
 
-    private int[] resultado = new int[2];
+    private int resultadoLocal;
 
-    @ManyToOne
-    private Equipo Local;
+    private int resultadoVisitante;
 
-    @ManyToOne
-    private Equipo Visitante;
+    private String nombre_local;
 
+    private String nombre_visitante;
+
+    @JsonIgnore
     @ManyToOne
     private Torneo torneo;
 

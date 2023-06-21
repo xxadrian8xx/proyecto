@@ -1,9 +1,12 @@
 package iesvdm.adrian.proyecto.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +18,8 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 @Builder
 @Table(name = "torneo")
-public class Torneo {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Torneo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +36,7 @@ public class Torneo {
 
     private String nivel;
 
+    @JsonIgnore
     @JoinTable(
             name = "rel_torneo_equipo",
             joinColumns = @JoinColumn(name = "ID_Torneo", nullable = false),
@@ -40,6 +45,7 @@ public class Torneo {
     @ManyToMany
     private List<Equipo> equipos;
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "torneo", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Partido> partidos;
 }

@@ -1,9 +1,12 @@
 package iesvdm.adrian.proyecto.controller;
 
 import iesvdm.adrian.proyecto.domain.Equipo;
+import iesvdm.adrian.proyecto.domain.Usuario;
 import iesvdm.adrian.proyecto.exceptions.ResourceNotFoundException;
 import iesvdm.adrian.proyecto.service.EquipoService;
+import iesvdm.adrian.proyecto.service.UsuarioService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +18,14 @@ import java.util.Optional;
 @RequestMapping("/equipos")
 @CrossOrigin
 public class EquipoController {
+    @Autowired
     private final EquipoService equipoService;
+    @Autowired
+    private final UsuarioService usuarioService;
 
-    public EquipoController(EquipoService equipoService) {
+    public EquipoController(EquipoService equipoService, UsuarioService usuarioService) {
         this.equipoService = equipoService;
+        this.usuarioService = usuarioService;
     }
 
     @GetMapping(value = {"","/"})
@@ -47,4 +54,6 @@ public class EquipoController {
     public void deleteProduct(@PathVariable("id") Long id) {
         this.equipoService.delete(id);
     }
+
+
 }

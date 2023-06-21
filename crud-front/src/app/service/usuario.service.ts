@@ -9,7 +9,7 @@ import { Usuario } from '../model/usuario';
 })
 
 export class UsuarioService {
-
+  
   usuarioURL = environment.apiResrURL + '/usuarios';
 
   constructor(private httpClient: HttpClient) { }
@@ -30,8 +30,9 @@ export class UsuarioService {
     return this.httpClient.put<any>(this.usuarioURL + `/${id}`, usuario);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.usuarioURL + `/${id}`);
+  public delete(id: number): void {
+    this.httpClient.delete(this.usuarioURL + `/${id}`)
+        .subscribe(() => console.log('Delete successful'));
   }
   
 }

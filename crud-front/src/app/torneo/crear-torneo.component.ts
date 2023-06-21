@@ -20,6 +20,7 @@ export class CrearTorneoComponent implements OnInit{
   nivel!: string;
   partidos!: Partido[];
   equipo!:Equipo[];
+  lista:string[]=["Futbol","Baloncesto","Voley", "Rugby", "Natacion"];
 
   constructor(
     private torneoService: TorneoService,
@@ -39,7 +40,7 @@ export class CrearTorneoComponent implements OnInit{
         this.router.navigate(['']);
       },
       err => {
-        this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});
+        this.toast.error(err.error.message, 'Formateo de Fecha incorrecto', { timeOut: 3000, positionClass: 'toast-top-center'});
       }
     );
   }

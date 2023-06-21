@@ -3,6 +3,7 @@ import { UsuarioService } from '../service/usuario.service';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from '../model/usuario';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-usuario',
@@ -15,7 +16,8 @@ export class ListUsuarioComponent implements OnInit{
 
   constructor(
     private usuarioService: UsuarioService,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private router: Router
   ) {  }
 
   ngOnInit(): void {
@@ -34,7 +36,8 @@ export class ListUsuarioComponent implements OnInit{
   }
 
   onDelete(id: number): void {
-        this.usuarioService.delete(id)
+    this.usuarioService.delete(id)
+    window.location.reload()
   }
   
 }

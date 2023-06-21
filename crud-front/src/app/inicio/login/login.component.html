@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<div class="col-md-4 col-sm-6 mx-auto container mt-5">
+    <h4 class="text-center">Log In</h4>
+    <div class="row" *ngIf="loading">
+        <div class="spinner-border text-info float-right" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <form (ngSubmit)="login()" id="login" >
+        <div class="mb-3">
+            <input type="text" [(ngModel)]="usuario.usuario" id="usuario" [ngModel]="nUsuario" [ngModelOptions]="{standalone:true}" placeholder="Usuario" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <input type="password" [(ngModel)]="usuario.password" id="password" [ngModel]="password" [ngModelOptions]="{standalone:true}" placeholder="Contraseña" class="form-control" required>
+        </div>
+        <div class="row">
+            <button class="btn btn-outline-success w-100 mb-3" (click)="login()">
+                <i class="fas fa-plus-circle"></i> Log In
+            </button>
+        </div>
+    </form>
+    <br>
+    <div class="row" *ngIf="errorInicio">
+        <label for="" class="float-right" style="color: red" >Usuario o password incorrecto.</label>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="" class="float-right">Si no tienes cuenta, <a href="/usuarios/create">Registrate</a></label>
+        </div>
+    </div>
+</div>

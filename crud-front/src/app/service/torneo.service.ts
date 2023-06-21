@@ -29,8 +29,9 @@ export class TorneoService {
     return this.httpClient.put<any>(this.torneoURL + `/${id}`, torneo);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.torneoURL + `/${id}`);
+  public delete(id: number): void {
+    this.httpClient.delete(this.torneoURL + `/${id}`)
+        .subscribe(() => console.log('Delete successful'));
   }
   
 }

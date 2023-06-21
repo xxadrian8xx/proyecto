@@ -1,1 +1,32 @@
-<p>crear-equipo works!</p>
+<body>
+    <app-menu></app-menu>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 mx-auto">
+                <h4 class="text-center">Crear Torneo</h4>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre"
+                            autocomplete="off" required [(ngModel)]="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <input type="file" id="image" class="form-control" accept="image/*" (change)="upload($event)">
+                    </div>
+                    <div>
+                        <img [src]="url" alt="" class="img-fluid img-thumbnail">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="descripcion" name="apellido2" placeholder="descripcion"
+                            autocomplete="off" required [(ngModel)]="descripcion">
+                    </div>
+                    <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
+                        <i class="fas fa-plus-circle"></i> Create
+                    </button>
+                    <button class="btn btn-outline-primary w-100" routerLink="/equipos">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Back
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

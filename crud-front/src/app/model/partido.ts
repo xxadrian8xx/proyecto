@@ -3,13 +3,15 @@ import { Torneo } from "./torneo";
 
 export class Partido {
     id!: number;
-    resultado: number[];
-    local: Equipo;
-    visitante: Equipo;
+    local: string;
+    visitante: string;
+    resultadoLocal: number;
+    resultadoVisitante: number;
     torneo: Torneo;
     
-    constructor(resultado: number[], local: Equipo, visitante: Equipo, torneo: Torneo){
-        this.resultado = resultado;
+    constructor(local: string, visitante: string, torneo: Torneo, resultadoLocal: number,  resultadoVisitante: number){
+        this.resultadoLocal = resultadoLocal;
+        this.resultadoVisitante = resultadoVisitante;
         this.local = local;
         this.visitante = visitante;
         this.torneo = torneo;

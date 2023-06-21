@@ -36,4 +36,5 @@ public class EquipoService {
         this.equipoRepository.findById(id).map(p -> {this.equipoRepository.delete(p);
             return p;});
     }
+
 }

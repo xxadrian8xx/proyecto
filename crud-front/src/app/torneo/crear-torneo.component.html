@@ -10,29 +10,22 @@
                             autocomplete="off" required [(ngModel)]="nombre">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" placeholder="apellido1"
+                        <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" placeholder="fecha_inicio  DD/MM/YYYY"
                             autocomplete="off" required [(ngModel)]="fecha_inicio">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="deporte" name="apellido2" placeholder="deporte"
-                            autocomplete="off" required [(ngModel)]="deporte">
+                            <select name="miselect" [(ngModel)]="deporte" autofocus sele>
+                                <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+                            </select>
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="nivel" name="email" placeholder="nivel"
+                        <input type="text" class="form-control" id="nivel" name="nivel" placeholder="nivel"
                             autocomplete="off" required [(ngModel)]="nivel">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="partidos" name="telefono" placeholder="partidos"
-                            autocomplete="off" required [(ngModel)]="partidos">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="equipo" name="telefono" placeholder="equipo"
-                            autocomplete="off" required [(ngModel)]="equipo">
                     </div>
                     <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
                         <i class="fas fa-plus-circle"></i> Create
                     </button>
-                    <button class="btn btn-outline-primary w-100" routerLink="/">
+                    <button class="btn btn-outline-primary w-100" routerLink="/torneos">
                         <i class="fas fa-arrow-alt-circle-left"></i> Back
                     </button>
                 </form>

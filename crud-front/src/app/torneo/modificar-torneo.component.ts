@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ModificarTorneoComponent implements OnInit{
   id!: number;
   torneo!: Torneo;
+  lista:string[]=["Futbol","Baloncesto","Voley", "Rugby", "Natacion"];
 
   constructor(
     private torneoService: TorneoService,
@@ -28,7 +29,7 @@ export class ModificarTorneoComponent implements OnInit{
     this.torneoService.update(this.id, this.torneo).subscribe(
       data => {
         this.toast.success(data.message, 'OK', { timeOut: 3000, positionClass: 'toast-top-center' });
-        this.router.navigate(['']);
+        this.router.navigate(['/torneos']);
       },
       err => {
         this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center' });

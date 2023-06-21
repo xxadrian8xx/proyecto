@@ -48,4 +48,13 @@ public class UsuarioController {
         this.usuarioService.delete(id);
     }
 
+    @GetMapping(value = {"/login", "/login/{usuario}/{password}"})
+    public Usuario login(@PathVariable("usuario") String usuario, @PathVariable("password") String password) {
+        List<Usuario> usuarios = usuarioService.usuarioLogeado(usuario, password);
+        if (!usuarios.isEmpty()) {
+            return usuarios.get(0);
+        }
+        return null;
+    }
+
 }
