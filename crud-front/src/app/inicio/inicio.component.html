@@ -7,7 +7,9 @@
                 <img src="./assets/volleyball.png" class="card-img-top" alt="...">
                 <div class="container-fluid card-body">
                     <h5 class="card-title">{{tor.nombre}}</h5>
-                    <p class="card-text">Restantes: 4 plazas<br>Finaliza: 24/10</p>
+                    <p class="card-text">Tamaño: {{tor.tamano}} plazas</p>
+                    <p>{{tor.deporte}}</p>
+                    <p>Nivel: {{tor.nivel}}</p>
                     <a href="#" class="btn btn-primary" routerLink="/torneos/detail/{{tor.id}}">Ver Torneo</a>
                 </div>
             </div>

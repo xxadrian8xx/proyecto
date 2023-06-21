@@ -31,6 +31,7 @@ import { MenuCortoComponent } from './menu/menu-corto.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario.component';
 import { LoginComponent } from './inicio/login/login.component';
+import { FooterComponent } from './inicio/footer/footer.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { LoginComponent } from './inicio/login/login.component';
     InicioComponent,
     CrearUsuarioComponent,
     LoginComponent,
+    FooterComponent,
     
   ],
   imports: [

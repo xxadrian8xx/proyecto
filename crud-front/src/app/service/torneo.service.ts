@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 import { Torneo } from '../model/torneo';
+import { Usuario } from '../model/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,6 @@ export class TorneoService {
     this.httpClient.delete(this.torneoURL + `/${id}`)
         .subscribe(() => console.log('Delete successful'));
   }
+  
   
 }

@@ -3,6 +3,8 @@ import { Torneo } from '../model/torneo';
 import { TorneoService } from '../service/torneo.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
+import { Usuario } from '../model/usuario';
 
 @Component({
   selector: 'app-detalle-torneo',
@@ -11,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetalleTorneoComponent implements OnInit {
   torneo: Torneo | undefined;
+  
 
   constructor(
     private torneoService: TorneoService,
@@ -36,4 +39,6 @@ export class DetalleTorneoComponent implements OnInit {
         }
       )
   }
+
+
 }

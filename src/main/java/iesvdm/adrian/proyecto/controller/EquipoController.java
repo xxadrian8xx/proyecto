@@ -20,12 +20,10 @@ import java.util.Optional;
 public class EquipoController {
     @Autowired
     private final EquipoService equipoService;
-    @Autowired
-    private final UsuarioService usuarioService;
 
-    public EquipoController(EquipoService equipoService, UsuarioService usuarioService) {
+
+    public EquipoController(EquipoService equipoService) {
         this.equipoService = equipoService;
-        this.usuarioService = usuarioService;
     }
 
     @GetMapping(value = {"","/"})
@@ -54,6 +52,5 @@ public class EquipoController {
     public void deleteProduct(@PathVariable("id") Long id) {
         this.equipoService.delete(id);
     }
-
 
 }

@@ -3,6 +3,7 @@ import { Equipo } from '../model/equipo';
 import { EquipoService } from '../service/equipo.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Usuario } from '../model/usuario';
 
 @Component({
   selector: 'app-detalle-equipo',
@@ -12,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DetalleEquipoComponent {
 
   equipo: Equipo | undefined;
+  jugadores: Usuario[] | undefined;
 
   constructor(
     private equipoService: EquipoService,
@@ -22,6 +24,7 @@ export class DetalleEquipoComponent {
 
   ngOnInit(): void{
     this.getTorneo();
+
   }
   
   getTorneo(): void{
@@ -30,6 +33,10 @@ export class DetalleEquipoComponent {
         data=> {
           this.equipo = data;
           console.log(this.equipo);
+          if(this.equipo.jugadores.length>0){
+          this.jugadores = this.equipo?.jugadores;
+          console.log(this.jugadores);
+          }
         },
         err => {
           this.toast.error(err.error.message, 'Error', { timeOut: 3000, positionClass: 'toast-top-center'});

@@ -9,7 +9,7 @@
                         autocomplete="off" required [(ngModel)]="torneo.nombre">
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" placeholder="apellido1"
+                    <input type="text" class="form-control" id="fecha_inicio" name="fecha_inicio" placeholder="fecha_inicio"
                         autocomplete="off" required [(ngModel)]="torneo.fecha_inicio">
                 </div>
                 <div class="mb-3">
@@ -18,8 +18,12 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="nivel" name="email" placeholder="nivel"
+                    <input type="text" class="form-control" id="nivel" name="nivel" placeholder="nivel"
                         autocomplete="off" required [(ngModel)]="torneo.nivel">
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="nivel" name="tamano" placeholder="tamano"
+                        autocomplete="off" required [(ngModel)]="torneo.tamano">
                 </div>
                 <button class="btn btn-outline-success w-100 mb-3" [disabled]="!f.valid">
                         <i class="far fa-edit"></i> Update

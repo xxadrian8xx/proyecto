@@ -48,4 +48,5 @@ public class PartidoController {
     public void deleteProduct(@PathVariable("id") Long id) {
         this.partidoService.delete(id);
     }
+
 }

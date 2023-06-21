@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Equipo } from '../model/equipo';
 import { Torneo } from '../model/torneo';
 import { Partido } from '../model/partido';
+import { Usuario } from '../model/usuario';
 
 @Component({
   selector: 'app-crear-torneo',
@@ -16,10 +17,11 @@ export class CrearTorneoComponent implements OnInit{
   nombre!: string;
   fecha_inicio!: string;
   deporte!: string;
-  tamaño!: number;
+  tamano!: number;
   nivel!: string;
   partidos!: Partido[];
   equipo!:Equipo[];
+  jugadores!: Usuario[];
   lista:string[]=["Futbol","Baloncesto","Voley", "Rugby", "Natacion"];
 
   constructor(
@@ -33,7 +35,7 @@ export class CrearTorneoComponent implements OnInit{
 
   onCreate(): void {
     
-    const tor = new Torneo(this.nombre, this.fecha_inicio, this.deporte, this.tamaño, this.nivel, this.partidos, this.equipo);
+    const tor = new Torneo(this.nombre, this.fecha_inicio, this.deporte, this.tamano, this.nivel, this.partidos, this.equipo, this.jugadores);
     this.torneoService.create(tor).subscribe(
       data => {
         this.toast.success(data.message, 'OK', { timeOut: 3000, positionClass: 'toast-top-center'});
